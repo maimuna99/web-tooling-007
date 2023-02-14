@@ -1,7 +1,7 @@
-name: eslint
+name: lint
 on: [push]
 jobs:
-  build:
+  eslint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -9,5 +9,4 @@ jobs:
         with:
           node-version: 18.13.0
       - run: npm ci
-      - name: Run ESLint
-        run: npx eslint . --ext .js,.jsx,.ts,.tsx
+      - run: npx eslint . --ext .js,.jsx,.ts,.tsx
