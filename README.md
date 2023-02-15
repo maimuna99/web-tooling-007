@@ -1,10 +1,15 @@
-# Getting Started with Create React App
+## Project Title : Web Tooling 
 
+# Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+n the project directory, you can run to download dependencies:
 
-In the project directory, you can run:
+
+### `npm i`
+
+In the project directory, you can run to run the app:
 
 ### `npm start`
 
