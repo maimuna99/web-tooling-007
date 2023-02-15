@@ -4,7 +4,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-n the project directory, you can run to download dependencies:
+In the project directory, you can run to download dependencies:
 
 
 ### `npm i`
@@ -56,6 +56,28 @@ read more from: https://www.npmjs.com/package/husky
 
 ##  lint-staged
 read more from: https://www.npmjs.com/package/lint-staged?activeTab=readme
+
+#  Git hooks
+This project runs a linter and unit tests before committing to git
+# npm Scripts:
+start script runs react-scripts start
+format script runs prettier --write .
+lint script runs eslint --fix .
+test script runs react-scripts test
+prepare script runs husky install
+precommit script runs eslint .
+build script runs react-scripts build
+eject script runs react-scripts eject 
+storybook script runs start-storybook -p 6006 -s public
+build-storybook script runs build-storybook -s public
+
+# Github actions
+This projects has two github action files:
+## lint.yml
+This git hub action is to run lint 
+
+## unit-testing.yml
+This github action is to run unit testing
 
 ## Learn More
 
