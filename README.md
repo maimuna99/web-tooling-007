@@ -60,16 +60,26 @@ read more from: https://www.npmjs.com/package/lint-staged?activeTab=readme
 #  Git hooks
 This project runs a linter and unit tests before committing to git
 # npm Scripts:
-start script runs react-scripts start
-format script runs prettier --write .
-lint script runs eslint --fix .
-test script runs react-scripts test
-prepare script runs husky install
-precommit script runs eslint .
-build script runs react-scripts build
-eject script runs react-scripts eject 
-storybook script runs start-storybook -p 6006 -s public
-build-storybook script runs build-storybook -s public
+### start script
+ runs react-scripts start
+### format script 
+runs prettier --write .
+### lint script 
+runs eslint --fix .
+### test script 
+runs react-scripts test
+### prepare script 
+runs husky install
+### precommit script 
+runs eslint .
+### build script 
+runs react-scripts build
+### eject script 
+runs react-scripts eject 
+### storybook script 
+runs start-storybook -p 6006 -s public
+### build-storybook script 
+runs build-storybook -s public
 
 # Github actions
 This projects has two github action files:
