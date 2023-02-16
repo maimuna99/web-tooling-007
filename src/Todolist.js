@@ -4,7 +4,7 @@ import Todo from "./Todo";
 export default function Todolist({ todos }) {
   return (
     <>
-      {todos.length}
+      {/* {todos.length} */}
       {todos.map((todo, i) => (
         <Todo key={i} todo={todo} />
       ))}
