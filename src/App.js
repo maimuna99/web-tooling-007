@@ -1,15 +1,13 @@
 import React, { useState, useRef } from "react";
-import Example from "./Requires2";
+// import Example from "./Requires2";
 import Todolist from "./Todolist";
 
 function App() {
   const todoNameRef = useRef();
   const todoDesRef = useRef();
   const todoEmojiRef = useRef();
-  const [todos, setTodos] = useState([
-    { id: 1, name: "todo1", description: "desc", emoji: "🧘🏻‍♂️", complete: true },
-  ]);
-
+  // { id: 1, name: "todo1", description: "desc", emoji: "🧘🏻‍♂️", complete: true },
+  const [todos, setTodos] = useState([]);
   function handleAddToDo() {
     const name = todoNameRef.current.value;
     const description = todoDesRef.current.value;
@@ -98,9 +96,13 @@ function App() {
           </form>
         </div>
       </div>
-      <Todolist todos={todos} />
+      <div className="body py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <Todolist todos={todos} />
 
-      <Example />
+          {/* <Example /> */}
+        </div>
+      </div>
     </>
   );
 }
