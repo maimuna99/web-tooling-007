@@ -18,11 +18,11 @@ export default function Todo({ todo }) {
                 <div className="text-6xl">{todo.emoji}</div>
               </div>
               {todo.name}
-              <input
+              {/* <input
                 type="checkbox"
                 checked={todo.complete}
                 className="place-content-end float-right right-4"
-              />
+              /> */}
             </dt>
             <dd className="mt-2 text-base leading-7 text-gray-600 pl-6">
               {todo.description}
