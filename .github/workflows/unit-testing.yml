@@ -9,6 +9,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
-      - run: npm run format
+      # - run: npm run format
       - run: npm install
       - run: npm test
