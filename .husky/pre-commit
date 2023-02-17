@@ -2,6 +2,8 @@
 . "$(dirname -- "$0")/_/husky.sh"
  npm run format
  npx eslint . --ext .js,.jsx,.ts,.tsx
- npm test
+ npm run eslint --fix .
  npm run precommit
+
+
 

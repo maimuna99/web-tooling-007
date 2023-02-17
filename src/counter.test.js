@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { render, screen } from "@testing-library/react";
-import Counter from "./Counter";
+import Counter from "./counter";
 import userEvent from "@testing-library/user-event";
 
 describe("<Counter/>", () => {
