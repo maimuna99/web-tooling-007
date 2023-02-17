@@ -18,10 +18,11 @@ Default.args = {
   },
 };
 
-export const Pinned = Template.bind({});
-Pinned.args = {
+export const Clicked = Template.bind({});
+Clicked.args = {
   task: {
     ...Default.args.task,
+    className: "border-blue-700",
     state: "TASK_PINNED",
   },
 };
