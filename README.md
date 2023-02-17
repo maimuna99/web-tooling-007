@@ -1,11 +1,12 @@
-# Project Title : Web Tooling 
+# Project Title : Web Tooling
 
 ## Getting Started with Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-In the project directory, you can run to download dependencies:
 
+In the project directory, you can run to download dependencies:
 
 ### `npm i`
 
@@ -43,50 +44,81 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
 # Tools Used
 
 ## prettier
+
 read more from: https://prettier.io/
 
 ## eslint
+
 read more from: https://www.npmjs.com/package/eslint
 
 ## husky
+
 read more from: https://www.npmjs.com/package/husky
 
-##  lint-staged
+## lint-staged
+
 read more from: https://www.npmjs.com/package/lint-staged?activeTab=readme
 
-#  Git hooks
+# Git hooks
+
 This project runs a linter and unit tests before committing to git
+
 # npm Scripts:
+
 ### start script
- runs react-scripts start
-### format script 
+
+runs react-scripts start
+
+### format script
+
 runs prettier --write .
-### lint script 
+
+### lint script
+
 runs eslint --fix .
-### test script 
+
+### test script
+
 runs react-scripts test
-### prepare script 
+
+### prepare script
+
 runs husky install
-### precommit script 
+
+### precommit script
+
 runs eslint .
-### build script 
+
+### build script
+
 runs react-scripts build
-### eject script 
-runs react-scripts eject 
-### storybook script 
+
+### eject script
+
+runs react-scripts eject
+
+### storybook script
+
 runs start-storybook -p 6006 -s public
-### build-storybook script 
+
+### build-storybook script
+
 runs build-storybook -s public
 
 # Github actions
+
 This projects has two github action files:
+
 ## lint.yml
-This git hub action is to run lint 
+
+This git hub action is to run lint
 
 ## unit-testing.yml
+
 This github action is to run unit testing
 
 ## Learn More

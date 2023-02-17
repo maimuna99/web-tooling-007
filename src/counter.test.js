@@ -4,7 +4,7 @@ import Counter from "./Counter";
 import userEvent from "@testing-library/user-event";
 
 describe("<Counter/>", () => {
-  it("should start with 0", () => {
+  it("should satrt on 0", () => {
     render(<Counter />);
     expect(screen.getByTestId("counter-number")).toHaveTextContent("0");
   });
