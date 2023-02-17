@@ -1,30 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Task({
-  task: { id, title, state },
-  onArchiveTask,
-  onPinTask,
-}) {
+export default function Task({ task: { title, state } }) {
   return (
     <div className={`list-item ${state}`}>
-      <label
-        htmlFor="checked"
-        aria-label={`archiveTask-${id}`}
-        className="checkbox"
-      >
-        <input
-          type="checkbox"
-          disabled={true}
-          name="checked"
-          id={`archiveTask-${id}`}
-          checked={state === "TASK_ARCHIVED"}
-        />
-        <span className="checkbox-custom" onClick={() => onArchiveTask(id)} />
-      </label>
-
       <label htmlFor="title" aria-label={title} className="title">
         <input
+          className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
           type="text"
           value={title}
           readOnly={true}
@@ -32,18 +14,6 @@ export default function Task({
           placeholder="Input title"
         />
       </label>
-
-      {state !== "TASK_ARCHIVED" && (
-        <button
-          className="pin-button"
-          onClick={() => onPinTask(id)}
-          id={`pinTask-${id}`}
-          aria-label={`pinTask-${id}`}
-          key={`pinTask-${id}`}
-        >
-          <span className={`icon-star`} />
-        </button>
-      )}
     </div>
   );
 }
