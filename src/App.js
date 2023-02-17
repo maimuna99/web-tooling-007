@@ -1,6 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Todolist from "./Todolist";
 // import Header from "./header";
+import uuidv4 from "uuid/v4";
+
+const LOCAL_STORAGE_KEY = "todoApp.todos";
 
 function App() {
   const todoNameRef = useRef();
@@ -8,6 +11,15 @@ function App() {
   const todoEmojiRef = useRef();
   // { id: 1, name: "todo1", description: "desc", emoji: "🧘🏻‍♂️", complete: true },
   const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (storedTodos) setTodos(storedTodos);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
   function handleAddToDo() {
     const name = todoNameRef.current.value;
     const description = todoDesRef.current.value;
@@ -18,7 +30,7 @@ function App() {
     setTodos(() => {
       return todos.concat([
         {
-          id: 1,
+          id: uuidv4(),
           name: name,
           description: description,
           emoji: emoji,
@@ -31,7 +43,6 @@ function App() {
     todoEmojiRef.current.value = null;
     console.log(todos, "todos");
   }
-
   return (
     <>
       {/* <Header /> */}
@@ -45,13 +56,13 @@ function App() {
               This is your habbit Tracker!
             </p>
             <h2 className="text-lg font-semibold leading-8 tracking-tight text-green-800">
-              You have {todos.length} To Do's
+              You have {todos.length} Habit(s)
             </h2>
           </div>
           <form className="mt-8 space-y-6" action="#" method="POST">
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
-                To Do name:
+                Habit name:
                 <input
                   ref={todoNameRef}
                   id="name"
@@ -61,7 +72,7 @@ function App() {
                 />
               </div>
               <div>
-                To Do Description:
+                Habit Description:
                 <input
                   ref={todoDesRef}
                   id="describtion"
@@ -71,7 +82,7 @@ function App() {
                 />
               </div>
               <div>
-                To Do Emoji:
+                Habit Emoji:
                 <input
                   ref={todoEmojiRef}
                   id="emoji"
@@ -86,26 +97,20 @@ function App() {
               <button
                 type="submit"
                 onClick={handleAddToDo}
-                className="group relative  w-50  justify-center rounded-md border border-transparent bg-red-800 py-2 px-4 text-sm font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                className="group relative  w-full  justify-center rounded-md border border-transparent bg-red-800 py-2 px-4 text-sm font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
               >
-                Add To Do
+                Add Habit
               </button>
               <button
                 type="submit"
-                className="group relative  w-50  justify-center rounded-md border border-transparent bg-red-800 py-2 px-4 text-sm font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                className="group relative  w-full  justify-center rounded-md border border-transparent bg-red-800 py-2 px-4 text-sm font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
               >
-                Clear Completed To Do
+                Clear Habits
               </button>
             </div>
           </form>
 
-          <div className="body py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <Todolist todos={todos} />
-
-              {/* <Example /> */}
-            </div>
-          </div>
+          <Todolist todos={todos} />
         </div>
       </div>
     </>
