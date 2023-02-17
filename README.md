@@ -12,9 +12,6 @@ In the project directory, you can run to run the app:
 
 Runs the app in the development mode.\
 
-
-
-
 # Tools Used
 
 ## prettier
