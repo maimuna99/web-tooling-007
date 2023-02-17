@@ -5,18 +5,10 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      # - uses: actions/checkout@v3
+      # - uses: actions/setup-node@v3
         with:
           node-version: 18.13.0
-      - uses: ArtiomTr/jest-coverage-report-action@v2
-        id: coverage
-        with:
-          output: report-markdown
-          test-script: npm run test
-      - uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          message: ${{ steps.coverage.outputs.report }}
       - run: npm install
       - run: npm run format
       - run: npm test
