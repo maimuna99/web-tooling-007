@@ -32,7 +32,7 @@ const Counter = () => {
           {state}
         </p>
         <button
-          data-testide="counter-button"
+          data-testid="counter-button"
           onClick={onButtonClick}
           className="bg-indigo-600 text-white left-2"
           style={{

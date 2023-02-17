@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Todolist from "./Todolist";
 // import Header from "./header";
-import uuidv4 from "uuid/v4";
 
 const LOCAL_STORAGE_KEY = "todoApp.todos";
 
@@ -30,7 +29,7 @@ function App() {
     setTodos(() => {
       return todos.concat([
         {
-          id: uuidv4(),
+          id: name,
           name: name,
           description: description,
           emoji: emoji,
